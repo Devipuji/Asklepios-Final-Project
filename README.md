@@ -41,26 +41,11 @@ B. Feature yang memiliki korelasi antar feature adalah
 - Cost terhadap Calls
 
 
+## Data Pre-Processing
+
+
 ## Business Insight and Recommendation
 - Untuk pembelian produk dengan discount diatas 10% banyak mengalami keterlambatan pengiriman. <br>
 Dalam hal ini pihak e-commerce perlu memberikan notifikasi keterlambatan pengiriman kepada customer ketika melakukan pembelian dengan menggunakan discount yang besar yang memungkinkan produk yang dipesan tidak terkirim tepat waktu.
 - Barang dengan berat 2-4 Kg terkonfirmasi mengalami keterlambatan pengiriman. <br>
 Dalam hal ini, pihak e-commerce perlu memberikan notifikasi keterlambatan pengiriman kepada customer yang membeli produk di rentang berat produk 2-4 kg sebelum customer melakukan transaksi.
-- Semakin banyak customer care calls yang terjadi maka tingkat keterlambatan pengiriman semakin menurun <br>
-Berdasarkan data jumlah keterlambatan pengiriman menurun dengan meningkatnya jumlah telepon yang diterima oleh customer care.
-Perusahaan perlu mencari informasi mengenai isi telepon customer kepada customer care (siapa penelpon, isi telepon), sehingga bisa menentukan korelasi dengan jumlah keterlambatan pengiriman.
-
-Rekomendasi dengan Asumsi: 
-1. Bila di asumsikan bahwa pelanggan menelpon untuk melakukan konfirmasi pemesanan, maka bisa dilakukan proses konfirmasi pemesanan dari pelanggan memberikan pengingat kepada penjual untuk segera melakukan konfirmasi ketersediaan barang dan kesiapaan pengiriman kepada bagian pengiriman atau kurir. (bisa dengan aplikasi atau ditambahkan pada petugas tertentu).
-2. Bila di asumsikan bahwa penjual menelpon untuk melakukan konfirmasi kesediaan pesanan dan barang siap di kirim, maka bisa dilakukan proses otomatisasi saat penjual konfirmasi kesediaan barang, langsung barang disiapkan untuk di kirim pada hari yang sama dan mengirimkan konfirmasi untuk kurir mengirimkan.
-
-## Data Pre-Processing
-### Data Cleansing
-- Dilakukan handle outliers pada feature Discount yang menghasilkan 8604 baris data
-- Dilakukan standardization/normalization pada tiga feature yaitu: Cost, Discount dan Weight dikarenakan memiliki nilai variance dan standard deviation yang tinggi
-- Merubah nilai kategorik menjadi numerik pada feature Gender dan Importance menggunakan Label Encoding, dan menggunakan One Hots Encoding pada feature Warehouse dan Shipment
-- Proportion of minority >40% sehingga tidak perlu dilakukan handle class imbalance
-
-### Feature Engineering
-- Menghapus feature ID, Warehouse dan Shipment
-- Feature yang bisa ditambahkan : waktu pengiriman, alamat customer, alamat warehouse, musim/cuaca, kapasitas pengiriman per-hari, dan traffic route
